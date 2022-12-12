@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>安龍府 線上抽籤</title>
+    <link rel="stylesheet" href="draw.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header id="top">
+        <div class="header-container">
+            <img class="logo" src="./images/tan-ho.gif" alt="logo">
+            <a href="an-long.html"><button class="home-btn" type="button">回首頁</button></a>
+        </div>
+    </header>
+
+    <main class="drawing-container">
+        <h2>線上抽籤</h2>
+        <hr>
+        <p>因籤詩是借古事而來，與現今社會的複雜度相較，兩者的吻合度很難說，可能神在隱喻，也可能神要你作借鏡，故只能取其整體要義，無法對兩件事都準確。</p>
+        <p>請向神明秉告出自己的<u>住址、姓名及生辰八字、欲詢問的事情</u>後，按下按鈕進行擲杯。一事得籤後，再求另一事。</p>
+
+        <!-- drawing animation and btn div -->
+        <div class="draw-btns-div">
+            <img class="draw-animation" src="./images/tell-move.gif" alt="animation of a drawing container">
+            <button class="draw-btn" type="button">擲杯</button>
+        </div>
+
+        <!-- loading icon div -->
+        <div class="loading-icon">
+            <i class="fa-solid fa-spinner"></i>
+        </div>
+
+        <!-- cup results div -->
+        <div class="cup-result cup-result-div-yes">
+            <img class="cup-pic" src="./draw/yes.gif" alt="cup result" />
+            <h2>聖筊</h2>
+            <button class="draw-btn go-to-riddle-btn" type="button"><i class="fa-regular fa-bookmark"></i> 看籤詩 <i class="fa-regular fa-bookmark"></i></button>
+        </div>
+
+        <div class="cup-result cup-result-div-laugh">
+            <img class="cup-pic" src="./draw/no-2.gif" alt="cup result">
+            <h2>笑筊</h2>
+            <button class="draw-btn-2 draw-again-btn" type="button"><span id="countdowntimer"> 10</span>秒後自動返回擲杯畫面</button>
+        </div>
+
+        <div class="cup-result cup-result-div-no">
+            <img class="cup-pic" src="./draw/no-1.gif" alt="cup result">
+            <h2>陰筊</h2>
+            <button class="draw-btn-2 draw-again-btn" type="button"><span id="countdowntimer"> 10</span>秒後自動返回擲杯畫面</button>
+        </div>
+
+        <ul>
+            <li>聖筊，即一正一反&#40;一陽一陰&#41;，表示神應許所祈求的事情。</li>
+            <li>笑筊，即正正，二平面者&#40;二陽面&#41;，表示陳述不清楚無法裁示或明知機緣不足；何必一問；或所提問題自有主張、已有定數，又何必多此一問。</li>
+            <li>陰筊，即反反，為二凸面者&#40;二陰面&#41;，表示不應許所祈求的事情。</li>
+        </ul>
+
+        <!-- riddles modal section -->
+        <div class="riddle-modal-bg">
+            <div class="riddle-content-container">
+                <button type="button" class="close-riddle-btn"><i class="fa-solid fa-xmark"></i></button>
+                <img class="riddle-img" src="" alt="image of the riddle drawn">
+                <p class="riddle-p"></p>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-content-top">
+            <h4 class="footer-title">聯絡我們</h4>
+            <ul class="footer-contact-info-ul">
+                <li><a class="footer-contact-link" href="https://www.facebook.com/an.long.fu.tw/" target="_blank"><i
+                            class="fa-brands fa-square-facebook"></i> 安龍府</a></li>
+                <li class="footer-contact-info-li"><i class="fa-solid fa-square-phone-flip"></i>
+                    <span>&#40;05&#41;&#8211;3602199</span>
+                </li>
+                <li><a class="footer-contact-link" href="mailto:diansun@ms5.hinet.net"><i
+                            class="fa-solid fa-square-envelope"></i> <span>diansun&#64;ms5.hinet.net</span></a></li>
+                <li><a class="footer-contact-link" href="https://goo.gl/maps/RjonTz62yyjXgm5JA" target="_blank"><i
+                            class="fa-solid fa-location-dot"></i>嘉義縣東石鄉頂揖村<span>13</span>之<span>3</span></a></li>
+                <li class="footer-contact-info-li"><i class="fa-solid fa-money-check"></i> 郵政劃撥帳號 戶名&#8211;安龍府
+                    帳號&#8211;<span>31572644</span></li>
+            </ul>
+        </div>
+        <div class="footer-content-bottom">
+            <p><span>Copyright &#169;</span> 安龍府天和道觀網站全部圖文內容之著作權專屬安龍府管理委員會所有。非經安龍府管理委員會正式書面同意，不得將全部或部份內容，轉載於任何形式之媒體
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="draw.js"></script>
+
+</body>
+
+
+</html>

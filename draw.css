@@ -1,0 +1,430 @@
+@font-face {
+    font-family: 'cwTeXKai';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot);
+    src: url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.eot?#iefix) format('embedded-opentype'),
+        url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/cwtexkai/v3/cwTeXKai-zhonly.ttf) format('truetype');
+}
+
+
+
+html {
+    font-size: 6.25%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 17rem;
+    font-family: 'cwTeXKai', 'DFKai-sb', sans-serif;
+    margin: 0;
+    line-height: 1.5em;
+}
+
+
+
+/*General*/
+h2,
+h3,
+h4,
+p,
+ {
+    color: #373e44;
+}
+
+
+h2 {
+    margin-bottom: 0.6em;
+}
+
+hr {
+    height: 3.5px;
+    width: 60px;
+    background-color: rgba(230, 174, 23, 0.5);
+    border: none;
+    margin-bottom: 1.5em;
+    margin-left: 1em;
+}
+
+
+/*For english letter or numbers*/
+span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14rem;
+}
+
+
+/*header*/
+.header-container {
+    background-color: #fff;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.25);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    z-index: 2;
+}
+
+
+.logo {
+    display: block;
+    width: 55px;
+}
+
+.home-btn {
+    border: none;
+    background-color: transparent;
+    font-family:  'cwTeXKai', 'DFKai-sb', sans-serif;
+    font-size: 18rem;
+    color: #3c4249;
+    transition: opacity 0.5s;
+}
+
+.home-btn:hover,
+.home-btn:focus {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+
+/*drawing animation and btn section*/
+.drawing-container {
+    width: 95%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+.draw-btns-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.draw-animation {
+    display: block;
+    width: 30%;
+    max-width: 130px;
+    min-width: 80px;
+    margin-bottom: 1em;
+}
+
+.draw-btn {
+    font-family:  'cwTeXKai', 'DFKai-sb', sans-serif;
+    font-size: 20rem;
+    background-color: #373e44;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8em;
+    transition: all 0.4s;
+    animation: drawbtn 2s linear infinite;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.draw-btn:hover,
+.draw-btn:focus {
+    background-color: #e1e1e2;
+    color: #3c4249;
+    cursor: pointer;
+}
+
+@keyframes drawbtn {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+/*loading icon*/
+.loading-icon {
+    background-color: transparent;
+    animation: spin 1.5s linear infinite;
+    width: 16px;
+    margin: 7.33em auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*cup result section*/
+.cup-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cup-pic {
+    width: 40%;
+    max-width: 150px;
+    min-width: 100px;
+}
+
+.draw-btn-2 {
+    font-family:  'cwTeXKai', 'DFKai-sb', sans-serif;
+    font-size: 19rem;
+    padding: 0.5em;
+    color: #3c4249;
+    border: #3c4249 double 5px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.4s;
+}
+
+.draw-btn-2:hover,
+.draw-btn-2:focus {
+    background-color: #e1e1e2;
+    color: #373e44;
+    cursor: pointer;
+}
+
+.draw-btn-2:active {
+    opacity: 0.5;
+}
+
+/*display control*/
+/*when draw btn is clicked btn div will be gone*/
+.draw-btns-div-hidden {
+    display: none;
+}
+
+/*and one of the following items will be changed to display out*/
+
+.cup-result-div-yes {
+    display: none;
+}
+
+.cup-result-div-laugh {
+    display: none;
+}
+
+.cup-result-div-no {
+    display: none;
+}
+
+
+
+/*riddles modal section*/
+.riddle-modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba(55, 62, 68, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.riddle-content-container {
+    width: 70%;
+    height: 60%;
+    max-width: 450px;
+    max-height: 450px;
+    background-color: #fff;
+    overflow: auto;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.riddle-img {
+    display: block;
+    width: 50%;
+    min-width: 100px;
+    max-width: 200px;
+    border: #373e44 solid 1px;
+    margin: 1em auto;
+}
+
+.riddle-p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.close-riddle-btn {
+    background-color: transparent;
+    font-size: 22rem;
+    color: #373e44;
+    border: none;
+    padding: 0;
+    position: sticky;
+    left: 85%;
+    top: 15px;
+    transition: opacity 0.4s, transform 0.3s linear;
+}
+
+.close-riddle-btn:hover,
+.close-riddle-btn:focus {
+    cursor: pointer;
+    opacity: 0.5;
+    transform: rotate(270deg);
+}
+
+
+
+
+/*footer*/
+
+footer {
+    background-color: #e1e1e2;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+
+}
+
+.footer-title {
+    color: #373e44;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
+.footer-contact-info-ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer-contact-link,
+.footer-contact-info-li {
+    text-decoration: none;
+    color: #373e44;
+    font-size: 16rem;
+    transition: opacity 0.3s linear;
+}
+
+.footer-contact-link:hover,
+.footer-contact-link:focus {
+    opacity: 0.5;
+}
+
+.footer-content-top {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-content-bottom {
+    font-size: 14rem;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content-bottom p {
+    margin-bottom: 0;
+    line-height: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+/*============================
+bigger screen setup
+================================*/
+
+
+
+
+@media (min-width: 835px) {
+
+    /*General*/
+
+    body {
+        font-size: 19rem;
+    }
+
+    span {
+        font-size: 15rem;
+    }
+
+    /*header section*/
+    .home-btn {
+        font-size: 19rem;
+    }
+
+
+    /*riddle modal section*/
+    .close-riddle-btn {
+        font-size: 24rem;
+        left: 90%;
+        top: 20px;
+    }
+
+
+    /*footer*/
+    .footer-contact-link,
+    .footer-contact-info-li {
+        font-size: 18rem;
+    }
+
+
+    .footer-content-top {
+        width: 360px;
+    }
+
+
+
+
+}
+
+
+
+@media (min-width: 1175px) {
+
+
+    h2 {
+        text-align: center;
+    }
+
+    hr {
+        margin-left: auto;
+    }
+    /*header section*/
+    .header-container {
+        justify-content: space-around;
+    }
+
+}
+
+
+/*horizontal view setup*/
+@media (max-height: 400px) {
+    .draw-animation {
+        width: 10%;
+        min-width: 50px;
+    }
+    .cup-pic {
+        width: 10%;
+        min-width: 65px;
+    }
+}
