@@ -60,16 +60,17 @@ drawBtn.addEventListener('click', function () {
 
 
 //when it's no or laugh cup click the button and let the drawing animation display again
+// const againBtn = document.querySelectorAll('.draw-again-btn');
 
-const againBtn = document.querySelectorAll('.draw-again-btn');
+//                     againBtn.forEach(function (btn) {
+//                         btn.addEventListener('click', function () {
+//                             cupLaugth.style.display = 'none';
+//                             cupNo.style.display = 'none';
+//                             drawDiv.style.display = 'flex';
+//                             clearInterval(downloadTimer);
+//                         })
+//                     });
 
-againBtn.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        cupLaugth.style.display = 'none';
-        cupNo.style.display = 'none';
-        drawDiv.style.display = 'flex';
-    })
-});
 
 
 
