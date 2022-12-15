@@ -43,12 +43,12 @@ drawBtn.addEventListener('click', function () {
         let timeleft = 10;
         let downloadTimer = setInterval(function () {
             timeleft--;
-            const countTimer = document.querySelectorAll('#countdowntimer');
+            const countTimer = document.querySelectorAll('.countdowntimer');
             countTimer.forEach(function (item) {
                 item.textContent = timeleft;
                 if (timeleft <= 0) {
-                    item.textContent = '10';
                     clearInterval(downloadTimer);
+                    item.textContent = '10';
                 };
             });
         }, 1000);
